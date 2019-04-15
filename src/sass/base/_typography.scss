@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains typography styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Basic typography styles
+ */
+body {
+    color: $text-color;
+    font: 16px / 1.5 $font-primary;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+    color: #111;
+    text-decoration: none;
+}

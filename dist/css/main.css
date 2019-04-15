@@ -1,0 +1,172 @@
+/*!
+ * Frontend-Boilerplate v0.0.1
+ * A boilerplate for building front-end of web projects
+ * (c) 2019 Öztürk Can Gökkaya
+ * MIT License
+ * https://github.com/ozturkcangokkaya/Frontend-Boilerplate
+ */
+
+/**
+ * Mobile breakpoints
+ */
+/**
+ * Set up a decent box model on the root element
+ */
+/* line 8, src/sass/base/_base.scss */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+/* line 18, src/sass/base/_base.scss */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/**
+ * Clear inner floats
+ */
+/* line 8, src/sass/base/_helpers.scss */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+/* line 20, src/sass/base/_helpers.scss */
+.container {
+  max-width: 1200;
+  /* 1 */
+  margin-left: auto;
+  /* 2 */
+  margin-right: auto;
+  /* 2 */
+  padding-left: 20px;
+  /* 3 */
+  padding-right: 20px;
+  /* 3 */
+  width: 100%;
+  /* 1 */
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ */
+/* line 32, src/sass/base/_helpers.scss */
+.hide-text {
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ */
+/* line 41, src/sass/base/_helpers.scss */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+/**
+ * Visibility classes
+ */
+@media screen and (min-width: 576px) {
+  /* line 56, src/sass/base/_helpers.scss */
+  .hidden-sm-up {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  /* line 62, src/sass/base/_helpers.scss */
+  .hidden-sm-down {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* line 56, src/sass/base/_helpers.scss */
+  .hidden-md-up {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /* line 62, src/sass/base/_helpers.scss */
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  /* line 56, src/sass/base/_helpers.scss */
+  .hidden-lg-up {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  /* line 62, src/sass/base/_helpers.scss */
+  .hidden-lg-down {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  /* line 56, src/sass/base/_helpers.scss */
+  .hidden-xl-up {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  /* line 62, src/sass/base/_helpers.scss */
+  .hidden-xl-down {
+    display: none !important;
+  }
+}
+
+/* line 69, src/sass/base/_helpers.scss */
+.hidden {
+  display: none !important;
+}
+
+/**
+ * Basic typography styles
+ */
+/* line 8, src/sass/base/_typography.scss */
+body {
+  color: #111;
+  font: 16px/1.5 "Arial", sans-serif;
+}
+
+/**
+ * Basic styles for links
+ */
+/* line 16, src/sass/base/_typography.scss */
+a {
+  color: #111;
+  text-decoration: none;
+}

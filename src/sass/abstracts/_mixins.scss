@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+// @param {Int} $min
+// @param {Int} $max
+// @param {String} $type
+@mixin media($min, $max, $type: screen) {
+    @media #{$type} and (min-width: $min + px) and (max-width: $max - 1 + px) {
+        @content;
+    }
+}
+
+// @param {Int} $min
+// @param {String} $type
+@mixin media-min($min, $type: screen) {
+    @media #{$type} and (min-width: $min + px) {
+        @content;
+    }
+}
+
+// @param {Int} $max
+// @param {String} $type
+@mixin media-max($max, $type: screen) {
+    @media only #{$type} and (max-width: $max - 1 + px) {
+        @content;
+    }
+}

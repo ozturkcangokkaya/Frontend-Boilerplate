@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Size
+$max-width: 1200;
+$gutter: 20px;
+
+// Colors
+$text-color: #111;
+
+// Fonts
+$font-primary: "Arial", sans-serif;
+
+/**
+ * Mobile breakpoints
+ */
+$visibility-breakpoints: (
+    sm: 576,
+    md: 768,
+    lg: 1024,
+    xl: 1200,
+);
