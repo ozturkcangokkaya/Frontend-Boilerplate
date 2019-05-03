@@ -3,19 +3,50 @@
 // -----------------------------------------------------------------------------
 
 // Size
-$max-width: 1200;
+$max-width: 1200px;
 $gutter: 20px;
 
 // Colors
-$text-color: #111;
+$color-bg-light: #373740;
+$color-bg: #33333d;
+$color-bg-dark: #131315;
+$color-bg-darkest: #111;
+
+$color-primary-light: #37efba;
+$color-primary: #1eb980;
+$color-primary-dark: #007d51;
+$color-primary-darkest: #005d57;
+
+$color-secondary-lightest: #ffd7d0;
+$color-secondary-light: #ff857c;
+$color-secondary: #ff6859;
+
+$color-third-lightest: #ffd7d0;
+$color-third-light: #ffcf44;
+$color-third: #ffdc78;
+
+$color-fourth-lightest: #decaf7;
+$color-fourth-light: #b15dff;
+$color-fourth: #a932ff;
+
+$color-fifth-lightest: #b2f2ff;
+$color-fifth-light: #72deff;
+$color-fifth: #0082fb;
+
+$text-color-light: #afafb2;
+$text-color: #fff;
 
 // Fonts
-$font-primary: "Arial", sans-serif;
+$font-primary: 'Roboto Condensed', sans-serif;
+$font-secondary: 'Roboto', sans-serif;
+$base-font-size: 15px;
+$base-line-height: 2;
 
 /**
  * Mobile breakpoints
  */
-$visibility-breakpoints: (
+$breakpoints: (
+    xs: 480,
     sm: 576,
     md: 768,
     lg: 1024,

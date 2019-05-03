@@ -1,12 +1,23 @@
-// Utilities
-@import "./abstracts/variables";
-@import "./abstracts/mixins";
+// Abstracts
+@import './abstracts/variables';
+@import './abstracts/mixins';
+@import './abstracts/functions';
 
 // Base
-@import "./base/base";
-@import "./base/helpers";
-@import "./base/fonts";
-@import "./base/typography";
+@import './base/normalize';
+@import './base/base';
+@import './base/helpers';
+@import './base/fonts';
+@import './base/typography';
+
+// Components
+// @import './components/';
 
 // Layout
-@import "./layout/header";
+// @import './layout/';
+
+// Pages
+// @import './pages/';
+
+// Vendor
+// @import './pages/';

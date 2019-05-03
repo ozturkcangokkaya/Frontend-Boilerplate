@@ -6,14 +6,70 @@
  * Basic typography styles
  */
 body {
-    color: $text-color;
-    font: 16px / 1.5 $font-primary;
+    color: $text-color-light;
+    font: 16px / #{$base-line-height} $font-secondary;
 }
 
 /**
  * Basic styles for links
  */
 a {
-    color: #111;
+    color: $text-color-light;
     text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-primary;
+    line-height: 1.5;
+}
+
+.hashtag {
+    &::before {
+        margin-right: $gutter / 4;
+        content: '#';
+        color: $color-primary;
+    }
+}
+
+h1 {
+    font-size: calc(#{$base-font-size} + 3.5vw);
+}
+
+h2 {
+    font-size: calc(#{$base-font-size} + 3vw);
+}
+
+h3 {
+    font-size: calc(#{$base-font-size} + 2vw);
+}
+
+h4 {
+    font-size: calc(#{$base-font-size} + 1.5vw);
+}
+
+h5 {
+    font-size: calc(#{$base-font-size} + 1vw);
+}
+
+h6 {
+    font-size: calc(#{$base-font-size} + 0.5vw);
+}
+
+p {
+    font-family: $font-secondary;
+    font-size: calc(#{$base-font-size} + 0.25vw);
+    letter-spacing: 0.25px;
+
+    &.foreword {
+        font-size: calc(#{$base-font-size} + 0.6vw);
+    }
+
+    &:first-of-type {
+        margin-top: 0;
+    }
 }

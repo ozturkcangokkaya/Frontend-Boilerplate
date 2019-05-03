@@ -6,6 +6,3 @@
  * https://github.com/ozturkcangokkaya/Frontend-Boilerplate
  */
 
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM is loaded");
-});

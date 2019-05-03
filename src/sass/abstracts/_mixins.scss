@@ -2,27 +2,53 @@
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
 
-// @param {Int} $min
-// @param {Int} $max
-// @param {String} $type
+/// @param {Int} $min - Min Width
+/// @param {Int} $max - Max Width
+/// @param {String} $type
 @mixin media($min, $max, $type: screen) {
     @media #{$type} and (min-width: $min + px) and (max-width: $max - 1 + px) {
         @content;
     }
 }
 
-// @param {Int} $min
-// @param {String} $type
+/// @param {Int} $min - Min Width
+/// @param {String} $type
 @mixin media-min($min, $type: screen) {
     @media #{$type} and (min-width: $min + px) {
         @content;
     }
 }
 
-// @param {Int} $max
-// @param {String} $type
+/// @param {Int} $max - Max Width
+/// @param {String} $type
 @mixin media-max($max, $type: screen) {
     @media only #{$type} and (max-width: $max - 1 + px) {
         @content;
+    }
+}
+
+/// @param {String} $direction - Direction of colors
+/// @param {String} $colors - Colors to be applied as background
+/// @example - @include gradient-text(to right, red, blue, green);
+@mixin gradient-text($direction, $colors...) {
+    background-image: linear-gradient($direction, $colors);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    // Reset transparency to initial on selection
+    &::selection {
+        -webkit-background-clip: initial;
+        -webkit-text-fill-color: initial;
+    }
+}
+
+/// Tests whether the device's primary input mechanism can hover over elements.
+/// Fixes sticky hover state on IOS devices.
+/// @example - @include hover { transform: scale(1.1); }
+@mixin hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
     }
 }

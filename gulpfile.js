@@ -102,7 +102,7 @@ var browserSync = require("browser-sync");
  */
 
 // Remove pre-existing content from output folders
-var cleanDist = function(done) {
+var cleanDist = function (done) {
     // Make sure this feature is activated before running
     if (!settings.clean) return done();
 
@@ -142,13 +142,13 @@ var jsTasks = lazypipe()
     );
 
 // Lint, minify, and concatenate scripts
-var buildScripts = function(done) {
+var buildScripts = function (done) {
     // Make sure this feature is activated before running
     if (!settings.scripts) return done();
 
     // Run tasks on script files
     return src(paths.scripts.input).pipe(
-        flatmap(function(stream, file) {
+        flatmap(function (stream, file) {
             // If the file is a directory
             if (file.isDirectory()) {
                 // Setup a suffix variable
@@ -184,7 +184,7 @@ var buildScripts = function(done) {
 };
 
 // Lint scripts
-var lintScripts = function(done) {
+var lintScripts = function (done) {
     // Make sure this feature is activated before running
     if (!settings.scripts) return done();
 
@@ -195,7 +195,7 @@ var lintScripts = function(done) {
 };
 
 // Process, lint, and minify Sass files
-var buildStyles = function(done) {
+var buildStyles = function (done) {
     // Make sure this feature is activated before running
     if (!settings.styles) return done();
 
@@ -229,7 +229,7 @@ var buildStyles = function(done) {
 };
 
 // Optimize SVG files
-var buildSVGs = function(done) {
+var buildSVGs = function (done) {
     // Make sure this feature is activated before running
     if (!settings.svgs) return done();
 
@@ -240,7 +240,7 @@ var buildSVGs = function(done) {
 };
 
 // Copy static files into output folder
-var copyFiles = function(done) {
+var copyFiles = function (done) {
     // Make sure this feature is activated before running
     if (!settings.copy) return done();
 
@@ -249,7 +249,7 @@ var copyFiles = function(done) {
 };
 
 // Watch for changes to the src directory
-var startServer = function(done) {
+var startServer = function (done) {
     // Make sure this feature is activated before running
     if (!settings.reload) return done();
 
@@ -257,6 +257,7 @@ var startServer = function(done) {
     browserSync.init({
         server: {
             baseDir: paths.reload,
+            directory: true
         },
         https: true,
     });
@@ -266,14 +267,14 @@ var startServer = function(done) {
 };
 
 // Reload the browser when files change
-var reloadBrowser = function(done) {
+var reloadBrowser = function (done) {
     if (!settings.reload) return done();
     browserSync.reload();
     done();
 };
 
 // Watch for changes
-var watchSource = function(done) {
+var watchSource = function (done) {
     watch(paths.input, series(exports.default, reloadBrowser));
     done();
 };

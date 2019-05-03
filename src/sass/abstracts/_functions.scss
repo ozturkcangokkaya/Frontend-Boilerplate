@@ -1,0 +1,14 @@
+/// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+/// @param {Number} $num - Number to strip unit from.
+/// @returns {Number} The same number, sans unit.
+@function strip-units($number) {
+    @return $number / ($number * 0 + 1);
+}
+
+/// Converts pixel value to em, depending on its context
+/// @param {Number} $pixels - Px value to be converted to em
+/// @param {Number} $context - Font size of current context
+/// @returns {Number} - em value
+@function px-to-em($pixels, $context: $base-font-size) {
+    @return #{strip-units($pixels) / strip-units($context)}em;
+}

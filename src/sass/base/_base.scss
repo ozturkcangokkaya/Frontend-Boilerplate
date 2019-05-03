@@ -2,21 +2,54 @@
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
 
-/**
- * Set up a decent box model on the root element
- */
 html {
     box-sizing: border-box;
 }
 
-/**
- * Make all elements from the DOM inherit from the parent box-sizing
- * Since `*` has a specificity of 0, it does not override the `html` value
- * making all elements inheriting from the root box-sizing value
- * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
- */
 *,
 *::before,
 *::after {
     box-sizing: inherit;
+}
+
+*:focus {
+    outline: 2px solid $color-secondary-light;
+}
+
+::selection {
+    background: $color-primary;
+    color: $text-color;
+}
+
+.underline {
+    background-image: linear-gradient(
+        to right,
+        rgba($color-fourth, 0.8),
+        rgba($color-fourth-light, 0.8)
+    );
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    cursor: pointer;
+}
+
+figure {
+    margin: 2em 0;
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+}
+
+figcaption {
+    margin-top: -2px !important;
+    padding: $gutter / 2;
+    border: 2px dashed rgba($color-primary, 0.5);
+    font-family: $font-secondary;
+}
+
+hr {
+    border-width: 0.5px;
+    border-color: rgba($text-color-light, 0.25);
 }

@@ -7,7 +7,7 @@
  */
 .clearfix::after {
     clear: both;
-    content: "";
+    content: '';
     display: table;
 }
 
@@ -18,12 +18,12 @@
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .container {
+    width: 100%; /* 1 */
     max-width: $max-width; /* 1 */
     margin-left: auto; /* 2 */
     margin-right: auto; /* 2 */
     padding-left: $gutter; /* 3 */
     padding-right: $gutter; /* 3 */
-    width: 100%; /* 1 */
 }
 
 /**
@@ -52,7 +52,7 @@
 /**
  * Visibility classes
  */
-@each $key, $val in $visibility-breakpoints {
+@each $key, $val in $breakpoints {
     .hidden-#{$key}-up {
         @include media-min($val) {
             display: none !important;
@@ -68,4 +68,26 @@
 
 .hidden {
     display: none !important;
+}
+
+.mt0 {
+    margin-top: 0 !important;
+}
+
+.mb0 {
+    margin-bottom: 0 !important;
+}
+
+.pt0 {
+    padding-top: 0 !important;
+}
+
+.fullWide {
+    grid-column: 2 / -2;
+}
+
+@include media-max(map-get($breakpoints, lg)) {
+    .fullWide {
+        grid-column: 1 / -1;
+    }
 }
